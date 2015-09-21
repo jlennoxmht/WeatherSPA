@@ -1,0 +1,579 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "services/weatherService.js",
+			"settings":
+			{
+				"buffer_size": 369,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "weatherApp.directive('weatherReport', function () {\n\n    return {\n        restrict: 'AE',\n        templateUrl: 'directives/weatherReport.html',\n        replace: true,\n        scope: {\n            weatherDay: \"=\",\n            convertToStandard: \"&\",\n            convertToDate: \"&\",\n            dateFormat: \"@\"\n        }\n    };\n});",
+			"file": "directives/directives.js",
+			"file_size": 344,
+			"file_write_time": 130851598344640541,
+			"settings":
+			{
+				"buffer_size": 329,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "directives/weatherReport.html",
+			"settings":
+			{
+				"buffer_size": 310,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en-us\" ng-app=\"weatherApp\">\n<head>\n    <title>AngularJS Weather Forecast SPA</title>\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\">\n    <meta charset=\"UTF-8\">\n\n    <!-- load bootstrap and fontawesome via CDN -->\n    <link href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css\" rel=\"stylesheet\">\n    <style>\n        html, body, input, select, textarea {\n            font-size: 1.05em;\n        }\n    </style>\n\n    <!-- load angular via CDN -->\n    <script src=\"https://code.angularjs.org/1.4.1/angular.js\"></script>\n    <script src=\"https://code.angularjs.org/1.4.1/angular-route.js\"></script>\n    <script src=\"https://code.angularjs.org/1.4.1/angular-resource.js\"></script>\n\n    <!--<script src=\"../Scripts/angular.intellisense.js\"></script>-->\n    <script src=\"app.js\"></script>\n    <script src=\"routes/routes.js\"></script>\n    <script src=\"services/cityService.js\"></script>\n    <script src=\"services/weatherService.js\"></script>\n    <script src=\"controllers/homeController.js\"></script>\n    <script src=\"controllers/forecastController.js\"></script>\n    <script src=\"directives/directives.js\"></script>\n\n</head>\n<body>\n\n    <header>\n        <nav class=\"navbar navbar-default\">\n            <div class=\"container\">\n                <div class=\"navbar-header\">\n                    <a class=\"navbar-brand\" href=\"/\">AngularJS Weather</a>\n                </div>\n\n                <ul class=\"nav navbar-nav navbar-right\">\n                    <li><a href=\"#/\"><i class=\"fa fa-home\">Home</i></a></li>\n                </ul>\n            </div>\n        </nav>\n    </header>\n\n    <div class=\"container\">\n\n        <div ng-view>\n\n        </div>\n    </div>\n\n</body>\n</html>",
+			"file": "index.html",
+			"file_size": 1771,
+			"file_write_time": 130834561482299108,
+			"settings":
+			{
+				"buffer_size": 1717,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/home.html",
+			"settings":
+			{
+				"buffer_size": 422,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/forecast.html",
+			"settings":
+			{
+				"buffer_size": 646,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "routes/routes.js",
+			"settings":
+			{
+				"buffer_size": 475,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "\n\nweatherApp.controller('homeController', ['$scope', '$location', 'cityService', function ($scope, $location, cityService) {\n\n    $scope.city = cityService.city;\n\n    $scope.$watch('city', function () {\n        cityService.city = $scope.city;\n    });\n\n    $scope.submit = function() {\n        $location.path(\"/forecast\");\n    };\n}]);",
+			"file": "controllers/homeController.js",
+			"file_size": 348,
+			"file_write_time": 130802282360546458,
+			"settings":
+			{
+				"buffer_size": 333,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "controllers/forecastController.js",
+			"settings":
+			{
+				"buffer_size": 549,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 89,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 185.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ang",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 703.0
+	},
+	"console":
+	{
+		"height": 162.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/routes",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/views"
+	],
+	"file_history":
+	[
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/User/AngularJS-sublime-package.sublime-settings",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/index.html",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/User/JSON.sublime-settings",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/AngularJS/AngularJS-sublime-package.sublime-settings",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/controllers/forecastController.js",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/routes/routes.js",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/app.js",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/services/cityService.js",
+		"/C/Users/Jim/AppData/Roaming/Sublime Text 3/Packages/User/node.sublime-build",
+		"/E/Dev/Angularjs/Projects/WeatherSPA/App/WeatherSPA-Project.sublime-project",
+		"/E/Dev/Angularjs/Udemy/Wahlin/stuff.html"
+	],
+	"find":
+	{
+		"height": 48.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"tidy"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "services/weatherService.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 369,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								308,
+								308
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "directives/directives.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 329,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								318,
+								318
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "directives/weatherReport.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 310,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1717,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1664,
+								1664
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 465.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "views/home.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "views/forecast.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 646,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								572,
+								602
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "routes/routes.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 475,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "controllers/homeController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 333,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								328,
+								328
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "controllers/forecastController.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 549,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								15,
+								182
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 89,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 190.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/node.sublime-build",
+	"project": "WeatherSPA-Project.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 307.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
